@@ -192,9 +192,89 @@ body.dark .notes{background:rgba(30,30,30,0.45)}
 .acc-body p{margin:10px 0 18px;}
 
 
-/* login */
-.login-card{width:360px;background:var(--card);padding:22px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+/* 1. 登录页面的布局：确保卡片在屏幕中央 */
+.login-page {
+  height: 100vh; /* 占据整个视口高度 */
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  background: var(--bg); 
+}
 
+/* 2. 图片/Logo 样式：设置尺寸和圆形 */
+.login-card img.brand-icon-large {
+  width: 80px; 
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%; /* 变成圆形 */
+  /* margin-bottom 已经在 .login-card 中由 text-align: center 居中，只需要设置下方间距 */
+  margin: 0 auto 18px; 
+}
+
+/* 3. 表单标签和输入框样式：让它们垂直堆叠并充满宽度 */
+.login-card label {
+  display: block; /* 确保标签占据完整宽度 */
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--muted); /* 让标签文字稍微暗淡，突出输入框 */
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+  width: 100%; /* 充满父容器宽度 */
+  padding: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box; 
+  background: var(--bg);
+  color: var(--text);
+}
+body.dark .login-card input {
+    border: 1px solid rgba(255,255,255,0.08); /* 暗色模式下的边框 */
+    background: var(--card);
+}
+
+
+/* 4. 按钮组样式：让按钮并排显示 */
+.login-card .login-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    justify-content: space-between; /* 按钮之间留出空间 */
+}
+/* 确保按钮在 Flex 容器中能正确伸缩 */
+.login-card .login-actions .btn {
+    flex: 1; 
+    padding: 12px 20px;
+    text-decoration: none; /* 针对 <a> 标签的 Back 按钮 */
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+/* 登录按钮的默认样式 */
+.login-actions button.btn[type="submit"] {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+}
+.login-actions button.btn[type="submit"]:hover {
+    filter: brightness(1.1);
+}
+/* 返回按钮的样式 */
+.login-actions .ghost {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--muted);
+}
+.login-actions .ghost:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+body.dark .login-actions .ghost:hover {
+    background-color: rgba(255,255,255,0.05);
+}
 /* footer */
 .site-footer{padding:20px;text-align:center;color:var(--muted);margin-top:30px;font-size:14px}
 
