@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cuisine — Siyu (Joy) CAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="brand">
+      <img class="logo" src="images/xian-bell-tower.jpg" alt="logo"/>
+      <div style="font-weight:700">Siyu (Joy) CAI</div>
+    </div>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="foods.html">Cuisine</a>
+      <a href="about.html">About</a>
+      <a href="todo.html">To-Do</a>
+      <a href="game.html">Game</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="themeToggle" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Signature Dishes</h2>
+
+    <div class="accordion" id="accordion">
+      <!-- Item 1 -->
+      <div class="acc-item">
+        <button class="acc-header">Roujiamo <span class="chev">▾</span></button>
+        <div class="acc-body">
+          <img src="images/roujiamo.jpeg" alt="Roujiamo"/>
+          <p>Roujiamo — often called the Chinese hamburger. Tender braised meat tucked inside crisp, warm bread. A Xi'an street classic.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="acc-item">
+        <button class="acc-header">Mipi <span class="chev">▾</span></button>
+        <div class="acc-body">
+          <img src="images/mipi.jpeg" alt="Mipi"/>
+          <p>Wide, springy, and translucent, providing a refreshing chewiness against a bold, tangy, and intensely spicy sauce.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="acc-item">
+        <button class="acc-header">Yangrou Paomo <span class="chev">▾</span></button>
+        <div class="acc-body">
+          <img src="images/paomo.jpeg" alt="Paomo"/>
+          <p>Crumbled flatbread soaked in rich mutton soup — hearty and deeply savory. Often eaten with pickled garlic and herbs.</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+       <div class="acc-item">
+        <button class="acc-header">Biangbiang Noodles <span class="chev">▾</span></button>
+        <div class="acc-body">
+          <img src="images/biangbiang.jpeg" alt="Biangbiang Noodles"/>
+          <p>Long, hand-pulled wide noodles tossed with chili oil, garlic, and vinegar. The name "biang" is famous for its complex character.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+      <div class="acc-item">
+        <button class="acc-header">Kaorou <span class="chev">▾</span></button>
+        <div class="acc-body">
+          <img src="images/kaorou.jpeg" alt="Kaorou"/>
+          <p>Kaorou skewers feature chunky pieces of lamb or beef, grilled to be smoky and tender, and heavily coated in a fragrant, bold seasoning dominated by cumin and chili.</p>
+        </div>
+      </div>
+  
+
+  <section class="mini-gallery">
+      <h3>Food Pics</h3>
+      <div class="gallery-row">
+        <img src="images/roujiamo.jpeg" alt="roujiamo">
+    <img src="images/jinggao.jpeg" alt="jinggao">
+    <img src="images/kaorou.jpeg" alt="kaorou">
+    <img src="images/biangbiang.jpeg" alt="Biangbiang">
+    <img src="images/huluji.jpeg" alt="huluji">
+    <img src="images/mipi.jpeg" alt="mipi">
+    <img src="images/paomo.jpeg" alt="paomo">
+    <img src="images/shuijingbing.jpeg" alt="shuijingbing">
+    <img src="images/shuipen.jpeg" alt="shuipen">
+    <img src="images/suantang.jpg" alt="suantang"> 
+      </div>
+    </section>
+</main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Xi'an Food Tour</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

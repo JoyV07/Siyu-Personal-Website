@@ -1,0 +1,88 @@
+<!-- === about.html === -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About — Siyu (Joy) CAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-nav">
+  <div class="brand">
+    <img class="logo" src="images/xian-bell-tower.jpg" alt="logo"/>
+    <div style="font-weight:700">Siyu (Joy) CAI</div>
+  </div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="foods.html">Cuisine</a>
+    <a href="about.html">About</a>
+    <a href="todo.html">To-Do</a>
+    <a href="game.html">Game</a>
+  </nav>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button id="themeToggle" title="Toggle theme">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+  <h2>About Me</h2>
+  <section style="display:flex;gap:18px;align-items:center;margin-top:12px">
+    <img src="images/Joy.jpeg" alt="portrait" style="width:160px;border-radius:12px;object-fit:cover">
+    <div>
+      <h3>Siyu (Joy) CAI</h3>
+<section id="experience">
+    <h2>Experience & Education</h2>
+    <div class="job-role">
+        <h3>Co-Founder (Education & Management)</h3>
+        <p><strong>J&J Prep</strong> | Barcelona, Spain | October 2020 – Current</p>
+        <ul>
+            <li>Leads curriculum design and instruction for **English Exam Prep (IELTS), Chinese Language, and STEM** subjects (Mathematics, Physics, Chemistry, Biology).</li>
+            <li>Manages the incubation and maintenance of Social Media IP on platforms like Xiaohongshu and Douyin.</li>
+            <li>Facilitates Overseas Student Admissions and maintains strong relationships with examination boards (e.g., Cambridge).</li>
+        </ul>
+    </div>
+
+    <div class="job-role">
+        <h3>International Relations Officer</h3>
+        <p><strong>College of Software Technology, Zhejiang University</strong> | Hangzhou, China | September 2018 – October 2019</p>
+        <ul>
+            <li>Managed and led major international programs, including the 1+1 MSc program with Simon Fraser University (Canada) and the Cisco International Internship Program (CIIP).</li>
+            <li>Coordinated with top foreign universities and provided coaching for master students' international interviews.</li>
+        </ul>
+    </div>
+    
+    <div class="job-role">
+        <h3>Academic Foundation</h3>
+        <ul>
+            <li><strong>PhD of Gender Studies</strong> — Universidad de Granada (España)</li>
+            <li>MSc in Financial Engineering — Current Student, WorldQuant University (Focus on quantitative skills for finance) （USA）</li>
+            <li>MBA / Master in Business Administration — Harvard + ENEB / Universidad Isabell I (España)</li>
+            <li>Official Master of Political Science — Universitat Autònoma de Barcelona （España）</li>
+            <li>Master of Science in Law and Economics (EMLE) — Università di Bologna (Italia), Universiteit Gent (België), and Universität Wien (Österreich)</li>
+            <li>Bachelor Degrees** in Law, Sociology, and Life Science — Zhejiang University （China）</li>
+        </ul>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-list">
+        <h3>Data Analysis & Programming</h3>
+        <p><strong>Programming:</strong> Python, R programming, HTML, CSS, JavaScript</p>
+        <p><strong>Tools:</strong> SPSS & SAS, Stata, Atlas.ti</p>
+        <h3>Languages</h3>
+        <p>Chinese (Native) English (C2 Proficient User), Spanish (B1) , Catalan (A2/A1), and basic knowledge of Dutch, Japanese, Italian, German, and Korean</p>
+        <h3>Certifications & Interests</h3>
+        <p>Certified Swimming Coach, Swimming Referee, and Lifeguard, Travel Writer</p>
+    </div>
+</section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="yearAbout"></span> Siyu (Joy) CAI</footer>
+<script src="script.js"></script>
+<script>document.getElementById('yearAbout').textContent = new Date().getFullYear();</script>
+</body>
+</html>

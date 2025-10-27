@@ -1,0 +1,231 @@
+/* === style.css === */
+/* Global variables & theme */
+:root{
+  --accent: #EAC65C;
+  --bg: #faf5ef;
+  --card: #fff;
+  --text: #2b2b2b;
+  --glass: rgba(255,255,255,0.6);
+  --muted: #6b5a4a;
+  --shadow: 0 8px 30px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+body.dark{
+  --bg: #0f1112;
+  --card: #131516;
+  --text: #e9e7e2;
+  --glass: rgba(20,20,20,0.45);
+  --muted: #bfb7aa;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+
+/* --- 地图条背景手风琴样式 (Landing Page Background) --- */
+.background-stripes {
+    display: flex; /* 确保它是一个 Flex 容器 */
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+}
+
+.background-stripes .stripe {
+    /* 初始状态：所有条纹平分宽度 */
+    flex: 1; 
+    height: 100vh;
+    min-width: 0; /* 允许压缩 */
+    background-size: cover;
+    background-position: center;
+    transition: flex 0.6s ease-out, filter 0.6s ease-out; /* 添加平滑过渡 */
+    /* 初始视觉效果：略微变暗 */
+    filter: brightness(0.65); 
+    cursor: pointer;
+}
+
+/* 悬停逻辑：当鼠标悬停在整个容器上时，所有条纹默认缩小 */
+.background-stripes:hover .stripe {
+    flex: 0.15; /* 默认缩小到很小的比例 */
+    filter: brightness(0.5); /* 进一步变暗 */
+}
+
+/* 悬停逻辑：被悬停的条纹放大并变亮 */
+.background-stripes .stripe:hover {
+    flex: 3; /* 被悬停的条纹占据更大的空间 */
+    filter: brightness(1.0); /* 恢复正常亮度 */
+}
+/* top sticky nav (glassmorphism) */
+.site-nav{
+  position:sticky; top:0; z-index:1000;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 18px; gap:12px;
+  box-shadow: var(--shadow);
+}
+body.dark .site-nav{
+  background: linear-gradient(180deg, rgba(20,20,20,0.6), rgba(20,20,20,0.45));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* brand */
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{
+  width:42px;height:42px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.12);
+}
+
+/* nav links */
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{
+  text-decoration:none;padding:8px 12px;border-radius:8px;color:var(--text);font-weight:500;
+}
+.nav-links a:hover{background:rgba(0,0,0,0.04)}
+body.dark .nav-links a:hover{background:rgba(255,255,255,0.03)}
+
+/* active highlight HL-C: gold text + bottom line */
+.nav-links a.active{
+  color: var(--accent);
+  position:relative;
+}
+.nav-links a.active::after{
+  content:""; position:absolute; left:10%; right:10%; bottom:-6px; height:3px; border-radius:3px;
+  background: var(--accent);
+}
+
+/* theme toggle button */
+#themeToggle{padding:8px 10px;border-radius:10px;border:none;background:var(--glass);cursor:pointer}
+#themeToggle:hover{transform:scale(1.02)}
+
+.container{max-width:1100px;margin:24px auto;padding:0 18px}
+
+/* Hero on home page */
+.hero{
+  background-image: url('images/xian-wall.jpg');
+  background-size:cover;background-position:center;border-radius:14px;height:320px;position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero-overlay{
+  position:absolute;left:0;bottom:0;padding:28px;background:linear-gradient(0deg, rgba(0,0,0,0.45), transparent);
+  color:white;width:100%;
+}
+.hero-overlay h2{margin:0 0 8px;font-size:28px}
+.hero-actions{margin-top:12px;display:flex;gap:8px}
+
+/* sections */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.video-card{margin-top:22px;padding:16px;background:var(--card);border-radius:12px;box-shadow:var(--shadow)}
+.video-wrap{border-radius:8px;overflow:hidden}
+
+/* accordion (foods) */
+.acc-item{background:var(--card);border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow)}
+.acc-header{width:100%;text-align:left;padding:14px 18px;border:none;background:transparent;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text)}
+.acc-body{max-height:0;overflow:hidden;padding:0 18px;transition:max-height 0.35s ease;display:flex;gap:12px;align-items:flex-start}
+.acc-body img{width:180px;height:120px;object-fit:cover;border-radius:8px}
+.acc-body p{margin:10px 0 18px;color:var(--text)}
+
+/* schedule table */
+.schedule-table{width:100%;border-collapse:collapse;margin-top:12px;background:var(--card);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.schedule-table th, .schedule-table td{padding:12px;border-bottom:1px solid rgba(0,0,0,0.04);text-align:left}
+body.dark .schedule-table th, body.dark .schedule-table td{border-bottom:1px solid rgba(255,255,255,0.03)}
+
+/* notes */
+.notes{margin-top:20px;background:rgba(255,255,255,0.6);padding:15px;border-left:4px solid var(--accent);border-radius:6px}
+body.dark .notes{background:rgba(30,30,30,0.45)}
+
+/* mini gallery - accordion style (Revised for CONTAINE object-fit) */
+.mini-gallery {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mini-gallery .gallery-row {
+  display: flex;
+  height: 220px; 
+  overflow: hidden;
+  background-image: url('images/paper.jpg'); /* 设置背景色，用于填充 contain 模式下的空白区域 */
+}
+
+
+.mini-gallery .gallery-row img {
+  /* 关键修正：使用 contain 模式，确保图片完整可见，不裁剪 */
+  object-fit: contain; 
+  flex: 1; 
+  min-width: 0; 
+  height: 100%;
+  cursor: pointer;
+  /* 降低过渡的复杂度，只保留 flex 变化 */
+  transition: flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  filter: none; /* 移除所有亮度变化，消除“膨胀”错觉 */
+}
+
+/* 核心逻辑 1：当鼠标悬停在整个容器上时，所有图片默认缩小 */
+.mini-gallery .gallery-row:hover img {
+    flex: 0.2; 
+    opacity: 0.7; /* 略微降低透明度，突出被选中的图片 */
+}
+
+/* 核心逻辑 2：被悬停的图片放大，覆盖上面的默认缩小规则 */
+.mini-gallery .gallery-row img:hover {
+    flex: 8; 
+    opacity: 1.0; /* 调回正常不透明度 */
+    z-index: 2; 
+}
+
+
+/* accordion */
+.accordion{margin-top:18px}
+.acc-item{background:var(--card);border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow)}
+.acc-header{width:100%;text-align:left;padding:14px 18px;border:none;background:transparent;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.acc-body{max-height:0;overflow:hidden;padding:0 18px;transition: max-height 0.35s ease;display:flex;gap:12px;align-items:flex-start}
+.acc-body img{width:180px;height:120px;object-fit:cover;border-radius:8px}
+.acc-body p{margin:10px 0 18px;}
+
+
+/* login */
+.login-card{width:360px;background:var(--card);padding:22px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+
+/* footer */
+.site-footer{padding:20px;text-align:center;color:var(--muted);margin-top:30px;font-size:14px}
+
+/* todo list styles */
+.todo-wrap{max-width:700px;margin:18px auto;background:var(--card);padding:18px;border-radius:10px;box-shadow:var(--shadow)}
+.todo-input{display:flex;gap:8px}
+.todo-input input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+.todo-list{margin-top:12px;list-style:none;padding:0}
+.todo-list li{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.04);margin-bottom:8px;background:transparent}
+.todo-list li .text{flex:1}
+.todo-list li.done .text{text-decoration:line-through;color:var(--muted)}
+
+/* game styles */
+.game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:720px;margin:18px auto}
+.card-game{background:var(--card);height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card-game .back, .card-game .front{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.card-game .front{transform:rotateY(180deg);backface-visibility:hidden;transition:transform 0.35s}
+.card-game.flip .front{transform:rotateY(0)}
+.card-game.flip .back{transform:rotateY(-180deg)}
+.card-game .back{background:linear-gradient(180deg,#f7f2ea,#efe7d1);color:#333;backface-visibility:hidden;transition:transform 0.35s}
+body.dark .card-game .back{background:linear-gradient(180deg,#1a1a1a,#111);color:var(--text)}
+
+/* responsive */
+@media (max-width:900px){
+  .accordion-gallery{height:160px}
+  .game-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:600px){
+  .nav-links{display:none}
+  .site-nav{padding:10px}
+  .hero-card{flex-direction:column}
+  .accordion-gallery{height:120px}
+  .game-grid{grid-template-columns:repeat(2,1fr)}
+}
